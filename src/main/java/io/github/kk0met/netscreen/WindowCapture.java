@@ -38,6 +38,7 @@ public final class WindowCapture implements Runnable {
         int ReleaseDC(Pointer hwnd, Pointer hdc);
         boolean PrintWindow(Pointer hwnd, Pointer hdc, int flags);
         void keybd_event(byte vk, byte scan, int flags, Pointer extra);
+        int SetWindowRgn(Pointer hwnd, Pointer hrgn, boolean redraw);
     }
 
     public interface G32 extends Library {
@@ -52,6 +53,8 @@ public final class WindowCapture implements Runnable {
         boolean SetBrushOrgEx(Pointer hdc, int x, int y, Pointer prev);
         boolean StretchBlt(Pointer dst, int x, int y, int w, int h,
                            Pointer src, int sx, int sy, int sw, int sh, int rop);
+        Pointer CreateRectRgn(int left, int top, int right, int bottom);
+        int CombineRgn(Pointer dst, Pointer src1, Pointer src2, int mode);
         int GetDIBits(Pointer hdc, Pointer bmp, int start, int lines,
                       Pointer bits, Pointer bmi, int usage);
     }

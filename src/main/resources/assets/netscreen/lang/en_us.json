@@ -5,7 +5,6 @@
   "key.netscreen.size": "Change size",
   "key.netscreen.corner": "Move to next corner",
   "key.netscreen.play": "Media Play/Pause",
-
   "netscreen.msg.windows_only": "NetScreen only works on Windows",
   "netscreen.msg.now_showing": "NetScreen: %s",
   "netscreen.msg.size": "Screen size: %s",
@@ -17,7 +16,6 @@
   "netscreen.corner.top_right": "top right",
   "netscreen.corner.bottom_left": "bottom left",
   "netscreen.corner.bottom_right": "bottom right",
-
   "netscreen.status.pick": "Choose a window",
   "netscreen.status.connecting": "Connecting...",
   "netscreen.status.error": "Capture error (see log)",
@@ -28,8 +26,10 @@
   "netscreen.status.read_failed": "Could not read pixels",
   "netscreen.status.black_1": "Only black frames received:",
   "netscreen.status.black_2": "try turning off hardware acceleration in that app",
-
   "netscreen.pick.title": "NetScreen - choose a window to show",
   "netscreen.pick.refresh": "Refresh",
-  "netscreen.pick.empty": "No windows found. Open one and press Refresh"
+  "netscreen.pick.empty": "No windows found. Open one and press Refresh",
+  "netscreen.configuration.title": "NetScreen settings",
+  "netscreen.configuration.keepSourceRendering": "Keep covered window rendering",
+  "netscreen.configuration.keepSourceRendering.tooltip": "Stops browsers such as Chrome or Edge from pausing the captured window while Minecraft is on top of it."
 }

@@ -7,7 +7,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
@@ -36,7 +40,9 @@ public final class NetScreen {
         return new KeyMapping("key." + MODID + "." + name, code, CATEGORY);
     }
 
-    public NetScreen(IEventBus modBus) {
+    public NetScreen(IEventBus modBus, ModContainer container) {
+        container.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
+        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         if (!WindowCapture.SUPPORTED) {
             LOG.warn("[NetScreen] Window capture is only supported on Windows; the mod will stay idle.");
         }
@@ -64,5 +70,6 @@ public final class NetScreen {
         while (KEY_SIZE.consumeClick()) ScreenOverlay.nextSize();
         while (KEY_CORNER.consumeClick()) ScreenOverlay.nextCorner();
         while (KEY_PLAY.consumeClick()) WindowCapture.mediaPlayPause();
+        OcclusionGuard.sync(ScreenOverlay.isVisible() && Config.keepSourceRendering());
     }
 }

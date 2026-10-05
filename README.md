@@ -20,6 +20,7 @@ without alt-tabbing out of the game. Pretty dystopian, but neat.
 - **Remembers your choice**: the next time you press the key, it reattaches to the same window.
 - **Three sizes** (small, medium, large) and **four corners**.
 - **Media key**: optional key binding that sends Play/Pause to the system.
+- **Works behind the game**: browsers keep rendering even when Minecraft covers them.
 - **Lightweight**: capture runs on its own thread, resolution matches what is on screen,
   and it stops completely while the screen is hidden.
 - **Client-side only**: works in singleplayer and on any server. Nothing to install server-side.
@@ -51,6 +52,7 @@ without alt-tabbing out of the game. Pretty dystopian, but neat.
 | *unbound* | Media Play/Pause |
 
 All keys can be changed in **Options → Controls → Key Binds → NetScreen**.
+Other settings are in **Mods → NetScreen → Config** (or `config/netscreen-client.toml`).
 
 Sound is not captured: audio keeps playing from the original application.
 
@@ -60,9 +62,10 @@ Sound is not captured: audio keeps playing from the original application.
 capture cannot read, and windows showing protected content are always black by design.
 Turning off hardware acceleration in that application often helps for ordinary content.
 
-**The image freezes when the game covers the window.** Some browsers stop drawing windows
-that are completely hidden. Leave a small part of the window visible, move it to a second
-monitor, or turn off the browser's background/occlusion throttling.
+**The image goes black or freezes when the game covers the window.** Chromium-based browsers
+stop drawing windows that are completely hidden. NetScreen prevents this automatically
+(option *Keep covered window rendering*, on by default). If you use another app that does the
+same, leave a small part of its window visible or move it to a second monitor.
 
 **"Window is minimized".** Minimized windows are not drawn by Windows. Restore the window
 and leave it behind the game instead.

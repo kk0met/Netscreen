@@ -37,6 +37,10 @@ public final class ScreenOverlay {
 
     // ------------------------------------------------------------ commands
 
+    public static boolean isVisible() {
+        return visible;
+    }
+
     public static void toggle() {
         visible = !visible;
         if (!visible) {
