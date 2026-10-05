@@ -1,14 +1,14 @@
 modLoader="javafml"
 loaderVersion="[1,)"
 license="${mod_license}"
-issueTrackerURL="https://github.com/kk0met/netphone/issues"
+issueTrackerURL="https://github.com/kk0met/netscreen/issues"
 
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 authors="${mod_authors}"
-displayURL="https://github.com/kk0met/netphone"
+displayURL="https://github.com/kk0met/netscreen"
 description='''Mirror any desktop window onto a small screen in your Minecraft HUD. Client-side only, Windows only.'''
 displayTest="IGNORE_ALL_VERSION"
 

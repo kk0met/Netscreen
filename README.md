@@ -1,6 +1,6 @@
 # NetScreen
 
-[![Build](https://github.com/kk0met/netphone/actions/workflows/build.yml/badge.svg)](https://github.com/kk0met/netphone/actions/workflows/build.yml)
+[![Build](https://github.com/kk0met/netscreen/actions/workflows/build.yml/badge.svg)](https://github.com/kk0met/netscreen/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Minecraft 1.21.1](https://img.shields.io/badge/Minecraft-1.21.1-62B47A)
 ![NeoForge](https://img.shields.io/badge/loader-NeoForge-E68C37)
@@ -84,8 +84,8 @@ NetScreen does not bypass DRM or any other content protection.
 ## Building from source
 
 ```bash
-git clone https://github.com/kk0met/netphone.git
-cd netphone
+git clone https://github.com/kk0met/netscreen.git
+cd netscreen
 ./gradlew build        # Windows: gradlew.bat build
 ```
 
