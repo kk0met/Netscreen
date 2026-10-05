@@ -31,6 +31,7 @@ Copy `en_us.json` to your locale file (for example `de_de.json`), translate the 
 and open a pull request.
 
 ## Releasing (maintainers)
-1. Update `mod_version` in `gradle.properties` and move the changelog entries under a new version.
-2. Commit, then push a tag: `git tag v1.1.0 && git push origin v1.1.0`.
-3. The **Release** workflow builds the jar and publishes a GitHub Release with it attached.
+1. Move the **Unreleased** entries in `CHANGELOG.md` under a new version heading.
+2. Bump `mod_version` in `gradle.properties` and push to `main`.
+3. The **Release** workflow builds the jar, creates the `vX.Y.Z` tag and publishes a GitHub Release
+   with the changelog section as notes.

@@ -1,8 +1,12 @@
 name: Release
 
+# Publishes a GitHub Release whenever `mod_version` in gradle.properties
+# changes to a version that has not been released yet.
 on:
   push:
-    tags: ['v*']
+    branches: [main]
+    paths: [gradle.properties, .github/workflows/release.yml]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,19 +16,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Read version
+        id: version
+        run: |
+          v=$(grep '^mod_version=' gradle.properties | cut -d= -f2 | tr -d '[:space:]')
+          echo "tag=v$v" >> "$GITHUB_OUTPUT"
+          if git rev-parse -q --verify "refs/tags/v$v" >/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "v$v is already released, nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - uses: actions/setup-java@v5
+        if: steps.version.outputs.exists == 'false'
         with:
           distribution: temurin
           java-version: '21'
 
       - uses: gradle/actions/setup-gradle@v4
+        if: steps.version.outputs.exists == 'false'
 
       - name: Build
+        if: steps.version.outputs.exists == 'false'
         run: ./gradlew build --no-daemon
 
+      - name: Extract changelog section
+        if: steps.version.outputs.exists == 'false'
+        run: |
+          v="${{ steps.version.outputs.tag }}"; v="${v#v}"
+          awk -v v="$v" '$0 ~ "^## \\["v"\\]" {f=1; next} /^## \[/ {f=0} f' CHANGELOG.md > release-notes.md
+          [ -s release-notes.md ] || echo "See CHANGELOG.md" > release-notes.md
+
       - name: Publish GitHub Release
+        if: steps.version.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: NetScreen ${{ steps.version.outputs.tag }}
+          target_commitish: ${{ github.sha }}
+          body_path: release-notes.md
           files: build/libs/*.jar
-          generate_release_notes: true
