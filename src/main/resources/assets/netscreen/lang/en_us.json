@@ -1,0 +1,35 @@
+{
+  "key.categories.netscreen": "NetScreen",
+  "key.netscreen.toggle": "Show / hide screen",
+  "key.netscreen.pick": "Choose window",
+  "key.netscreen.size": "Change size",
+  "key.netscreen.corner": "Move to next corner",
+  "key.netscreen.play": "Media Play/Pause",
+
+  "netscreen.msg.windows_only": "NetScreen only works on Windows",
+  "netscreen.msg.now_showing": "NetScreen: %s",
+  "netscreen.msg.size": "Screen size: %s",
+  "netscreen.msg.corner": "Screen position: %s",
+  "netscreen.size.small": "small",
+  "netscreen.size.medium": "medium",
+  "netscreen.size.large": "large",
+  "netscreen.corner.top_left": "top left",
+  "netscreen.corner.top_right": "top right",
+  "netscreen.corner.bottom_left": "bottom left",
+  "netscreen.corner.bottom_right": "bottom right",
+
+  "netscreen.status.pick": "Choose a window",
+  "netscreen.status.connecting": "Connecting...",
+  "netscreen.status.error": "Capture error (see log)",
+  "netscreen.status.closed": "Window closed, choose another one",
+  "netscreen.status.minimized": "Window is minimized, restore it",
+  "netscreen.status.empty": "Window has no content",
+  "netscreen.status.unsupported": "This window cannot be captured",
+  "netscreen.status.read_failed": "Could not read pixels",
+  "netscreen.status.black_1": "Only black frames received:",
+  "netscreen.status.black_2": "try turning off hardware acceleration in that app",
+
+  "netscreen.pick.title": "NetScreen - choose a window to show",
+  "netscreen.pick.refresh": "Refresh",
+  "netscreen.pick.empty": "No windows found. Open one and press Refresh"
+}

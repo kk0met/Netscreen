@@ -1,0 +1,35 @@
+{
+  "key.categories.netscreen": "NetScreen",
+  "key.netscreen.toggle": "Mostra / nascondi schermo",
+  "key.netscreen.pick": "Scegli finestra",
+  "key.netscreen.size": "Cambia dimensione",
+  "key.netscreen.corner": "Sposta nell'angolo successivo",
+  "key.netscreen.play": "Play/Pausa multimediale",
+
+  "netscreen.msg.windows_only": "NetScreen funziona solo su Windows",
+  "netscreen.msg.now_showing": "NetScreen: %s",
+  "netscreen.msg.size": "Dimensione schermo: %s",
+  "netscreen.msg.corner": "Posizione schermo: %s",
+  "netscreen.size.small": "piccolo",
+  "netscreen.size.medium": "medio",
+  "netscreen.size.large": "grande",
+  "netscreen.corner.top_left": "in alto a sinistra",
+  "netscreen.corner.top_right": "in alto a destra",
+  "netscreen.corner.bottom_left": "in basso a sinistra",
+  "netscreen.corner.bottom_right": "in basso a destra",
+
+  "netscreen.status.pick": "Scegli una finestra",
+  "netscreen.status.connecting": "Collegamento...",
+  "netscreen.status.error": "Errore di cattura (vedi log)",
+  "netscreen.status.closed": "Finestra chiusa, scegline un'altra",
+  "netscreen.status.minimized": "Finestra ridotta a icona, ripristinala",
+  "netscreen.status.empty": "Finestra senza contenuto",
+  "netscreen.status.unsupported": "Questa finestra non si può catturare",
+  "netscreen.status.read_failed": "Lettura pixel fallita",
+  "netscreen.status.black_1": "Arrivano solo immagini nere:",
+  "netscreen.status.black_2": "prova a disattivare l'accelerazione grafica del browser",
+
+  "netscreen.pick.title": "NetScreen - scegli la finestra da mostrare",
+  "netscreen.pick.refresh": "Aggiorna",
+  "netscreen.pick.empty": "Nessuna finestra trovata. Aprine una e premi Aggiorna"
+}

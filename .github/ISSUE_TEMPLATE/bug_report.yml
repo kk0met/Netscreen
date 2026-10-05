@@ -1,0 +1,41 @@
+name: Bug report
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a problem!
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Minecraft, NeoForge and NetScreen versions
+      placeholder: "Minecraft 1.21.1, NeoForge 21.1.x, NetScreen 1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 23H2"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Press Y
+        2. Choose window ...
+        3. ...
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: Upload `logs/latest.log` (or paste a link to it). Crash reports from `crash-reports/` are also helpful.
+      render: text
